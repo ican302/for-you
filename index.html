@@ -8,6 +8,8 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -37,6 +39,28 @@
             object-fit: contain;
             opacity: 0.5;
         }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        button {
+            animation: heartbeat 1.5s infinite ease-in-out;
+        }
+
+        #mailIcon {
+            animation: heartbeat 1.5s infinite ease-in-out;
+        }
     </style>
 </head>
 
@@ -65,7 +89,9 @@
                 Hallo Kamu 👋
             </p>
         </div>
-        <button id="nextButton" class="mt-4 px-5 py-2 bg-[#7d361b] text-white rounded-lg shadow-lg">Next</button>
+        <button id="nextButton" class="mt-4 px-4 py-2 bg-[#7d361b] text-white rounded-lg shadow-lg">
+            <i class="fa-solid fa-angles-right"></i>
+        </button>
     </div>
 
     <div id="card-2" class="hidden relative flex flex-col items-center justify-center h-screen z-10">
@@ -75,7 +101,9 @@
                 Ciee, yang hari ini lagi ulang tahun 🎉
             </p>
         </div>
-        <button id="nextButton" class="mt-4 px-5 py-2 bg-[#7d361b] text-white rounded-lg shadow-lg">Next</button>
+        <button id="nextButton" class="mt-4 px-4 py-2 bg-[#7d361b] text-white rounded-lg shadow-lg">
+            <i class="fa-solid fa-angles-right"></i>
+        </button>
     </div>
 
     <div id="card-3" class="hidden relative flex flex-col items-center justify-center h-screen z-10">
@@ -86,18 +114,24 @@
                 perjuangkan, senantiasa diberi kebahagiaan dan kesehatan
             </p>
         </div>
-        <button id="nextButton" class="mt-4 px-5 py-2 bg-[#7d361b] text-white rounded-lg shadow-lg">Next</button>
+        <button id="nextButton" class="mt-4 px-4 py-2 bg-[#7d361b] text-white rounded-lg shadow-lg">
+            <i class="fa-solid fa-angles-right"></i>
+        </button>
     </div>
 
     <div id="card-4" class="hidden relative flex flex-col items-center justify-center h-screen z-10">
         <img src="resources/stiker/Stiker 32 (SFILE.MOBI).gif" class="w-32 mb-4" alt="sticker">
         <div class="bg-white text-[#7d361b] p-6 border-[3px] border-[#7d361b] rounded-lg shadow-lg text-center mx-5">
-            <p>Btw, maaf ya, aku bikin drama mulu, nyakitin lagi, kamunya jadi salah paham lagi. Cape ya sama aku yang
+            <p>
+                Btw, maaf ya, aku bikin drama mulu, nyakitin lagi, kamunya jadi salah paham lagi. Cape ya sama aku yang
                 on off mulu? pasti cape sih kalau aku jadi kamu, aku gak ada maksud buat mainin perasaan kamu, aku cuma
                 bingung baiknya gimana, di satu sisi aku ingin terus merjuangin di sisi lain juga keknya lebih baik
-                berhenti. Bingung tau gakk, rumit banget 😭</p>
+                berhenti. Bingung tau gak, rumit banget 😭
+            </p>
         </div>
-        <button id="nextButton" class="mt-4 px-5 py-2 bg-[#7d361b] text-white rounded-lg shadow-lg">Next</button>
+        <button id="nextButton" class="mt-4 px-4 py-2 bg-[#7d361b] text-white rounded-lg shadow-lg">
+            <i class="fa-solid fa-angles-right"></i>
+        </button>
     </div>
 
     <div id="card-5" class="hidden relative flex flex-col items-center justify-center h-screen z-10">
@@ -105,17 +139,13 @@
         <div class="bg-white text-[#7d361b] p-6 border-[3px] border-[#7d361b] rounded-lg shadow-lg text-center mx-5">
             <p>Sekali lagi maaf ya, dan Happy Birthday ❤️</p>
         </div>
+
+        <button onclick="location.reload()" class="mt-4 px-4 py-2 bg-[#7d361b] text-white rounded-lg shadow-lg">
+            <i class="fa-solid fa-rotate-right"></i>
+        </button>
     </div>
 
     <script>
-        gsap.to("#mailIcon", {
-            scale: 1.1,
-            duration: 0.7,
-            repeat: -1,
-            yoyo: true,
-            ease: "power1.inOut"
-        });
-
         const stickers = document.querySelectorAll(".sticker");
         stickers.forEach((sticker, index) => {
             gsap.to(sticker, {
